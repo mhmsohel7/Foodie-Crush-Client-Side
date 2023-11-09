@@ -10,6 +10,10 @@ const router = createBrowserRouter([
       {
         path: "/chef",
         element: <Chef></Chef>,
+        loader: () =>
+          fetch(
+            "https://chef-recipe-server-ass-10-masumbillah99.vercel.app/chef"
+          ),
       },
     ],
   },

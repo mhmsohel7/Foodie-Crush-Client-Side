@@ -17,7 +17,7 @@ img {
   max-width: 100%;
 }
 .pad_tb_120 {
-  padding: 120px 0 0 0;
+  padding: 75px 0 0 0;
 }
 
 .grybg {
@@ -123,4 +123,88 @@ img {
   padding: 0 14px;
   color: #fff;
   font-size: 19px;
+}
+/* About section */
+.base-header {
+  text-align: left;
+  padding-bottom: 1px;
+}
+.base-header {
+  padding-bottom: 32px;
+  width: 100%;
+}
+.base-header span {
+  color: #e73a3e;
+  font-size: 25px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  display: block;
+  line-height: 1em;
+}
+.base-header span .bor_header {
+  position: relative;
+  display: inline-block;
+  height: 3px;
+  background: #e73a3e;
+  width: 40px;
+  border-radius: 43px;
+  margin-left: 20px;
+  margin-right: 40px;
+  top: -3px;
+}
+.about-section small {
+  font-size: 80%;
+  font-weight: 400;
+}
+.base-header span .bor_header:before,
+.base-header span .bor_header:after {
+  content: " ";
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  right: -10px;
+  background: #e73a3e;
+  border-radius: 50%;
+  top: 0;
+}
+.base-header span .bor_header:before,
+.base-header span .bor_header:after {
+  content: " ";
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  right: -10px;
+  background: #e73a3e;
+  border-radius: 50%;
+  top: 0;
+}
+.base-header span .bor_header:after {
+  right: -20px;
+}
+/* chef  */
+.chef_container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 45px;
+}
+.chef {
+  height: 510px;
+  border-radius: 8px;
+}
+.chef_img {
+  width: 376px;
+  height: 300px;
+  margin: 7px;
+  border-radius: 8px;
+}
+@media only screen and (max-width: 600px) {
+  .chef_container {
+    grid-template-columns: none;
+  }
+  .chef_img {
+    width: 440px;
+    height: 300px;
+  }
 }
