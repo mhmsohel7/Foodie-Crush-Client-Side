@@ -1,4 +1,4 @@
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { FaThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -33,7 +33,9 @@ const ChefCard = ({ chef }) => {
           </div>
         </Card.Body>
         <Button className="">
-          <Link className="text-white text-decoration-none">View Recipes</Link>
+          <Link to={`/chef/${id}`} className="text-white text-decoration-none">
+            View Recipes
+          </Link>
         </Button>
       </Card>
     </div>
