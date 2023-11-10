@@ -1,7 +1,30 @@
+import { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProviders";
 
+import { toast, ToastContainer } from "react-toastify";
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    //Create user in firebase auth
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        toast.success("Successfully Login");
+        form.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error(error.code);
+      });
+  };
   return (
     <div>
       <div className="sign-in-form">
@@ -9,7 +32,7 @@ const Login = () => {
           <h3>Welcome Back!</h3>
           <p>Please Sign In to your account.</p>
         </div>
-        <Form>
+        <Form onSubmit={handleLogin}>
           <Form.Group className="mb-4" controlId="formGroupEmail">
             <Form.Label className="ms-1">Enter Your Email : </Form.Label>
             <Form.Control
@@ -45,6 +68,7 @@ const Login = () => {
           </Form.Text>
         </Form>
       </div>
+      <ToastContainer />
     </div>
   );
 };
