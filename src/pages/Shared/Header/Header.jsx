@@ -19,7 +19,7 @@ const Header = () => {
             <Nav className="mx-auto d-flex align-item-center">
               <Link
                 className="me-5 fw-semibold text-black text-decoration-none "
-                to="/home"
+                to="/"
               >
                 Home
               </Link>
@@ -48,7 +48,7 @@ const Header = () => {
               </Link>
               <Link
                 className="fw-bold text-black text-decoration-none"
-                to="/favRecipe"
+                to="/login"
               >
                 Login
               </Link>
