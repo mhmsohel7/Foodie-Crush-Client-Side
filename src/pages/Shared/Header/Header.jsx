@@ -52,9 +52,17 @@ const Header = () => {
               </Link>
             </Nav>
             <Nav className="d-flex align-item-center">
-              <Link className="me-4 text-secondary text-decoration-none">
-                <FaUserCircle style={{ fontSize: "2rem" }} />
-              </Link>
+              {user && (
+                <Link className="me-4 text-secondary text-decoration-none">
+                  {/* <img
+                    src={user?.photoURL}
+                    alt="user profile"
+                    title={user?.displayName}
+                    className="w-10"
+                  /> */}
+                  <FaUserCircle style={{ fontSize: "2rem" }} />
+                </Link>
+              )}
 
               {user ? (
                 <Link
