@@ -1,8 +1,17 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProviders";
 
 const Header = () => {
+  const { user, logOutUser } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOutUser()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <>
       <Navbar
@@ -46,12 +55,23 @@ const Header = () => {
               <Link className="me-4 text-secondary text-decoration-none">
                 <FaUserCircle style={{ fontSize: "2rem" }} />
               </Link>
-              <Link
-                className="fw-bold text-black text-decoration-none"
-                to="/login"
-              >
-                Login
-              </Link>
+
+              {user ? (
+                <Link
+                  onClick={handleLogout}
+                  className="fw-bold text-black text-decoration-none"
+                  to="/login"
+                >
+                  Logout
+                </Link>
+              ) : (
+                <Link
+                  className="fw-bold text-black text-decoration-none"
+                  to="/login"
+                >
+                  Login
+                </Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

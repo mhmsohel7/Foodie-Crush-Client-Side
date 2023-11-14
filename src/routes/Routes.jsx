@@ -33,10 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/chef",
         element: <Chef></Chef>,
-        loader: () =>
-          fetch(
-            "https://chef-recipe-server-ass-10-masumbillah99.vercel.app/chef"
-          ),
+        loader: () => fetch("http://localhost:5000/chef"),
       },
     ],
   },
@@ -48,9 +45,7 @@ const router = createBrowserRouter([
         path: ":id",
         element: <ChefDetails />,
         loader: ({ params }) =>
-          fetch(
-            `https://chef-recipe-server-ass-10-masumbillah99.vercel.app/chef/${params.id}`
-          ),
+          fetch(`http://localhost:5000/chef/${params.id}`),
       },
     ],
   },
