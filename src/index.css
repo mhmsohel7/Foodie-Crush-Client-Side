@@ -258,3 +258,37 @@ img {
 .sign-in-form .sign-in-title p {
   margin-bottom: 30px;
 }
+/* profile */
+.profile-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-picture {
+  width: 40px; /* Adjust the size as needed */
+  height: 40px; /* Adjust the size as needed */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 125%; /* Position above the profile picture */
+  left: 50%;
+  margin-left: -60px; /* Center the tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.profile-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}

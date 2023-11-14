@@ -60,7 +60,15 @@ const Header = () => {
                     title={user?.displayName}
                     className="w-10"
                   /> */}
-                  <FaUserCircle style={{ fontSize: "2rem" }} />
+                  {/* <FaUserCircle className="profile" /> */}
+                  <div className="profile-container">
+                    <div className="tooltip">{user?.displayName}</div>
+                    <img
+                      className="profile-picture"
+                      src={user?.photoURL}
+                      alt="Profile"
+                    />
+                  </div>
                 </Link>
               )}
 
